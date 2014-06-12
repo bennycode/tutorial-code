@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Greeter</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script src="js/greeter/1.0.0/GreeterConfiguration.js"></script>
+    <script src="js/greeter/1.0.0/GreetingError.js"></script>
+    <script src="js/greeter/1.0.0/Greeter.js"></script>
+    <script>
+      var config = new GreeterConfiguration();
+      config.firstName = 'Benny';
+      config.lastName = 'Neugebauer';
+
+      var greeter = new Greeter(config);
+
+      try {
+        var greeting = greeter.getGreeting();
+        console.log(greeting);
+      } catch (error) {
+        if (error instanceof GreetingError) {
+          console.warn(error.name + ': ' + error.message);
+        }
+      }
+    </script>
+  </body>
+</html>
