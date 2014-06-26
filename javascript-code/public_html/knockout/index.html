@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <script src="/javascript-code/js/libs/knockout/3.1.0/knockout-min.js"></script>
+  </head>
+  <body>
+    <p>
+      <label for="firstName">First name:</label>    
+      <input id="firstName" type="text" data-bind="value: fistName" />    
+      <br />   
+      <label for="lastName">Last name:</label>
+      <input id="lastName" type="text" data-bind="value: lastName" />
+    </p>
+    <p>
+      <span data-bind="text: 'Hello '+fistName()+'!'"></span>
+    </p>
+    <script>
+      var person = {
+        fistName: ko.observable('Homer'),
+        lastName: ko.observable('Simpson')
+      };
+
+      ko.applyBindings(person, document.getElementById('imageTest'));
+    </script>
+  </body>
+</html>
